@@ -15,7 +15,8 @@ const httpPostMarketPrice=async (req,res)=>{
  
 }
 
+
 module.exports={
     httpGetMarketPrice,
-    httpPostMarketPrice
+    httpPostMarketPrice,
 }

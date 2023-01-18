@@ -5,6 +5,7 @@ require("dotenv").config();
 const {farmerRouter} =require('./routes/alldata/alldata.route')
 const {landRouter} = require('./routes/land/land.route')
 const{marketRouter} =require('./routes/market/market.route')
+const{buySellRouter} =require('./routes/buysell/buysell.route')
 const PORT = process.env.PORT || 8000;
 const app = express();
 app.use(express.json());
@@ -17,6 +18,7 @@ app.get('/',(req,res)=>{
 app.use(farmerRouter);
 app.use(landRouter);
 app.use(marketRouter);
+app.use(buySellRouter);
 
 const MONGO_URL = process.env.MONGODB_URI || "mongodb+srv://dlip:12345@cluster0.qwketrx.mongodb.net/?retryWrites=true&w=majority";
 
