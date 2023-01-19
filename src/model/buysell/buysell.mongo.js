@@ -4,6 +4,7 @@ const buySellSchema = new mongoose.Schema({
   cropType: String,
   cropName: String,
   quantity: String,
+  unit:String,
   price: String,
   description: String,
   district: String,
