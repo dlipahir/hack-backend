@@ -1,13 +1,13 @@
 const buySellDB =require('./buysell.mongo')
 
  const postSell=async (data)=>{
-    console.log("creating sell item");
+    console.log("creating sell item",data);
     const result = await buySellDB.updateOne(data,data,{upsert:true});
      return result; 
 }
  const getSellItems=async ()=>{
     console.log("creating sell item");
-    const result = await buySellDB.find({},{"_id":0,"__v":0});
+    const result = await buySellDB.find({},{"__v":0});
      return result; 
 }
 
