@@ -1,4 +1,4 @@
-const {postSell,getSellItems}  =require("../../model/buysell/buysell.model")
+const {postSell,getSellItems,deleteSellItems}  =require("../../model/buysell/buysell.model")
 
 // const httpGetMarketPrice =async (req,res)=>{
   
@@ -27,8 +27,14 @@ const httpgetSell=async (req,res)=>{
   res.status(201).json(result);
  
 }
+const httpDeleteSell=async (req,res)=>{
+  const id=req.params.id;
+ const result = await deleteSellItems(id);
+  res.status(201).json(result);
+ 
+}
 
 
 module.exports={
-  httpSell,httpgetSell
+  httpSell,httpgetSell,httpDeleteSell
 }

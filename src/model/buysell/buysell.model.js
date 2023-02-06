@@ -1,14 +1,24 @@
 const buySellDB =require('./buysell.mongo')
 
  const postSell=async (data)=>{
-    console.log("creating sell item",data);
+   // console.log("posting sell item",data);
     const result = await buySellDB.updateOne(data,data,{upsert:true});
      return result; 
 }
  const getSellItems=async ()=>{
-    console.log("creating sell item");
+  //  console.log("getting sell item");
     const result = await buySellDB.find({},{"__v":0});
      return result; 
+}
+ const deleteSellItems=async (id)=>{
+   try {
+    //  console.log("deleting sell item",id);
+    const result = await buySellDB.deleteOne({ "_id" : id });
+     return result; 
+   } catch (error) {
+      console.log("error happened in delete sell",e)
+   }
+    
 }
 
 //  const getLandByNameDetails=async (data)=>{
@@ -24,4 +34,4 @@ const buySellDB =require('./buysell.mongo')
 //      return result;
 // }
 
-module.exports={postSell,getSellItems}
+module.exports={postSell,getSellItems,deleteSellItems}
