@@ -6,6 +6,7 @@ const {farmerRouter} =require('./routes/alldata/alldata.route')
 const {landRouter} = require('./routes/land/land.route')
 const{marketRouter} =require('./routes/market/market.route')
 const{buySellRouter} =require('./routes/buysell/buysell.route')
+const{billRouter} =require('./routes/bill/bill.route')
 const PORT = process.env.PORT || 8000;
 const app = express();
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use(farmerRouter);
 app.use(landRouter);
 app.use(marketRouter);
 app.use(buySellRouter);
+app.use(billRouter);
 
 const MONGO_URL = process.env.MONGODB_URI || "mongodb+srv://dlip:12345@cluster0.qwketrx.mongodb.net/?retryWrites=true&w=majority";
 
